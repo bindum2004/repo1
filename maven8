@@ -31,8 +31,9 @@ This will clone the repo, Build the project using
 maven and Generate .jar in target again. 
 * Run the JAR & test 
 Add build step -> Add windows batch command 
-java -CP target/amazon-app-1.0-SNAPSHOT.jar 
-command
+
+java -cp target/myapp-1.0-SNAPSHOT.jar com.example.App
+
 
 
  sudo apt update
@@ -67,11 +68,13 @@ nano deploy.yml
       shell: nohup java -cp /home/bindu636171/ansible-deploy/myapp-1.0-SNAPSHOT.jar com.example.App > app.log 2>&1 &
 
 
- ansible-playbook -i inventory.ini deploy.yml --ask-become-pass
+
+
+ ansible-playbook -i inventory.ini deploy.yml --ask-become-pass  😊
 
 
 
-cat app.log
+cat app.log  😊
 
 
 
