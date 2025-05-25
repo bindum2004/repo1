@@ -1,0 +1,22 @@
+ To create a new project select the option available in the Dashboard 
+which is “New Item” Refer to the image provided below:
+
+
+Step 4. Now a list of options will be visible on the screen, along with a field 
+to name the maven project. Add a suitable name and select the freestyle 
+project  option to proceed.
+
+
+
+
+
+Step 6: GO to gitbash
+cd desktop
+got to maven project dirctory
+
+ git init 
+ git add . 
+ git branch -M main 
+$ git remote add origin https://github.com/itishreebarik890/SAMPLEJENKINSPROJECT.git 
+$ git push -u origin main
+
