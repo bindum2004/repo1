@@ -1,0 +1,16 @@
+first to maven project
+then push taht to git rep
+then in azure
+
+STEP4: Now goto Azure Devops Organization create Public 
+Project
+
+STEP5: SELECT PIPELINE and then click on create pipeline 
+STEP6: After creating Pipeline select type of repo as Github
+STEP7: It asks for minimum signin verification after that ur screen be 
+as in below select required repository 
+STEP9: It again verifies signin verification of microsoft 
+account You be able to see starter pipeline select for Maven 
+
+Finally You be able to see tasks running its failed because we should 
+mention proper path For pom.xm
