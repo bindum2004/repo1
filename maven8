@@ -1,0 +1,120 @@
+Step 1: * Create the maven project locally 
+ Set up Jenkins for CI
+
+
+
+push to github
+
+
+
+* Create new job in Jenkins -> freestyle project_ maven
+ci 
+* configure github 
+under Source code management select Git -> Enter 
+Github repo 
+* configure triggers 
+Enable poll SCM (H/5 * * * * for every minute) 
+* Build step: -> Add Invoke top-level Maven targets 
+Goal -> clean compile test package 
+This will clone the repo, Build the project using 
+maven and Generate .jar in target again. 
+* Run the JAR & test 
+Add build step -> Add windows batch command 
+java -CP target/amazon-app-1.0-SNAPSHOT.jar 
+command
+
+
+ sudo apt update
+sudo apt install ansible -y
+cd ~
+ mkdir ansible-deploy1 
+cd ansible-deploy1
+sudo apt install default-jdk -y
+java --version
+
+ nano inventory.ini
+
+[local]
+localhost ansible_connection=local
+
+
+
+nano deploy.yml
+
+---
+- name: Deploy JAR from Jenkins
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Copy JAR from Jenkins workspace
+      copy:
+        src: /mnt/d/devopsfold/devopsexper/8maven/myapp/target/myapp-1.0-SNAPSHOT.jar
+        dest: /home/bindu636171/ansible-deploy/myapp-1.0-SNAPSHOT.jar
+        mode: '0755'
+
+    - name: Run Java App in Background
+      shell: nohup java -cp /home/bindu636171/ansible-deploy/myapp-1.0-SNAPSHOT.jar com.example.App > app.log 2>&1 &
+
+
+ ansible-playbook -i inventory.ini deploy.yml --ask-become-pass
+
+
+
+cat app.log
+
+
+
+pom.xml for maven
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>myapp</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <dependencies>
+    <!-- JUnit Dependency for Testing -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Maven Surefire Plugin for running tests -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+        <configuration>
+          <redirectTestOutputToFile>false</redirectTestOutputToFile>
+          <useSystemOut>true</useSystemOut>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.example.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+
+
