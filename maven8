@@ -4,6 +4,17 @@ Step 1: * Create the maven project locally
 
 
 push to github
+ GO to gitbash
+cd desktop
+got to maven project dirctory
+
+ git init 
+ git add . 
+ git branch -M main 
+$ git remote add origin https://github.com/itishreebarik890/SAMPLEJENKINSPROJECT.git 
+$ git push -u origin main
+
+
 
 
 
