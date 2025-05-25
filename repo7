@@ -275,3 +275,22 @@ or
 😂😂
 [local]
 localhost ansible_connection=local
+
+
+
+or
+
+
+- name: Install and run nginx on localhost
+  hosts: local
+  become: yes
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Start nginx manually
+      command: nginx
+
