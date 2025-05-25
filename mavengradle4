@@ -1,0 +1,329 @@
+Microsoft Windows [Version 10.0.22631.5335]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\bindu>d:
+
+D:\>cd devopsfold
+
+D:\devopsfold>cd devopsexper
+
+D:\devopsfold\devopsexper>mkdir mavengradlefor4
+
+D:\devopsfold\devopsexper>cd mavengradlefor4
+
+D:\devopsfold\devopsexper\mavengradlefor4>mvn archetype:generate -DgroupId=com.example -DartifactId=myapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false😊😊😊
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 15 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 22 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-archetype-plugin/maven-metadata.xml (1.1 kB at 17 kB/s)
+[INFO]
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO]
+[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO]
+[INFO]
+[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Batch mode
+Downloading from central: https://repo.maven.apache.org/maven2/archetype-catalog.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/archetype-catalog.xml (17 MB at 5.7 MB/s)
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.0
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: basedir, Value: D:\devopsfold\devopsexper\mavengradlefor4
+[INFO] Parameter: package, Value: com.example
+[INFO] Parameter: groupId, Value: com.example
+[INFO] Parameter: artifactId, Value: myapp
+[INFO] Parameter: packageName, Value: com.example
+[INFO] Parameter: version, Value: 1.0-SNAPSHOT
+[INFO] project created from Old (1.x) Archetype in dir: D:\devopsfold\devopsexper\mavengradlefor4\myapp
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.704 s
+[INFO] Finished at: 2025-05-25T12:44:32+05:30
+[INFO] ------------------------------------------------------------------------
+
+D:\devopsfold\devopsexper\mavengradlefor4>cd myapp😊😊😊
+
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>mvn clean install😊😊😊
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -------------------------< com.example:myapp >--------------------------
+[INFO] Building myapp 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] Parameter 'useSystemOut' is unknown for plugin 'maven-surefire-plugin:2.22.2:test (default-test)'
+[INFO]
+[INFO] --- clean:3.2.0:clean (default-clean) @ myapp ---
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ myapp ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory D:\devopsfold\devopsexper\mavengradlefor4\myapp\src\main\resources
+[INFO]
+[INFO] --- compiler:3.13.0:compile (default-compile) @ myapp ---
+[INFO] Recompiling the module because of changed source code.
+[WARNING] File encoding has not been set, using platform encoding windows-1252, i.e. build is platform dependent!
+[INFO] Compiling 1 source file with javac [debug target 1.8] to target\classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ myapp ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory D:\devopsfold\devopsexper\mavengradlefor4\myapp\src\test\resources
+[INFO]
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ myapp ---
+[INFO] Recompiling the module because of changed dependency.
+[WARNING] File encoding has not been set, using platform encoding windows-1252, i.e. build is platform dependent!
+[INFO] Compiling 1 source file with javac [debug target 1.8] to target\test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO]
+[INFO] --- surefire:2.22.2:test (default-test) @ myapp ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in com.example.AppTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.4.1:jar (default-jar) @ myapp ---
+[INFO] Building jar: D:\devopsfold\devopsexper\mavengradlefor4\myapp\target\myapp-1.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- install:3.1.2:install (default-install) @ myapp ---
+[INFO] Installing D:\devopsfold\devopsexper\mavengradlefor4\myapp\pom.xml to C:\Users\bindu\.m2\repository\com\example\myapp\1.0-SNAPSHOT\myapp-1.0-SNAPSHOT.pom
+[INFO] Installing D:\devopsfold\devopsexper\mavengradlefor4\myapp\target\myapp-1.0-SNAPSHOT.jar to C:\Users\bindu\.m2\repository\com\example\myapp\1.0-SNAPSHOT\myapp-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.323 s
+[INFO] Finished at: 2025-05-25T12:48:43+05:30
+[INFO] ------------------------------------------------------------------------
+
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>mvn exec:java -Dexec.mainClass="com.example.App"😊😊😊😊😊😊
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/maven-metadata.xml (989 B at 1.4 kB/s)
+[INFO]
+[INFO] -------------------------< com.example:myapp >--------------------------
+[INFO] Building myapp 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- exec:3.5.0:java (default-cli) @ myapp ---
+2 + 3 = 5
+Application executed successfully!
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.717 s
+[INFO] Finished at: 2025-05-25T12:49:12+05:30
+[INFO] ------------------------------------------------------------------------
+
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>gradle init😊😊😊
+Starting a Gradle Daemon, 1 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+Found a Maven build. Generate a Gradle build from this? (default: yes) [yes, no] yes
+
+Select build script DSL:
+  1: Kotlin
+  2: Groovy
+Enter selection (default: Kotlin) [1..2] 2
+
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] no
+
+
+> Task :init
+Maven to Gradle conversion is an incubating feature.
+For more information, please refer to https://docs.gradle.org/8.14/userguide/migrating_from_maven.html in the Gradle documentation.
+
+BUILD SUCCESSFUL in 46s
+1 actionable task: 1 executed
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>gradle build😊😊😊
+Calculating task graph as no cached configuration is available for tasks: build
+
+> Task :test
+
+AppTest > testApp PASSED
+
+[Incubating] Problems report is available at: file:///D:/devopsfold/devopsexper/mavengradlefor4/myapp/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 11s
+7 actionable tasks: 7 executed
+Configuration cache entry stored.
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>gradle run😊😊😊
+Calculating task graph as no cached configuration is available for tasks: run
+
+> Task :run FAILED
+Error: Could not find or load main class com.example.AdditionOperation
+Caused by: java.lang.ClassNotFoundException: com.example.AdditionOperation
+
+[Incubating] Problems report is available at: file:///D:/devopsfold/devopsexper/mavengradlefor4/myapp/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':run'.
+> Process 'command 'D:\devopsfold\Java\jdk-17\bin\java.exe'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2s
+2 actionable tasks: 1 executed, 1 up-to-date
+Configuration cache entry stored.
+
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>gradle build😊😊😊😊😊😊
+Calculating task graph as configuration cache cannot be reused because file 'build.gradle' has changed.
+
+> Task :test
+
+AppTest > testApp PASSED
+
+[Incubating] Problems report is available at: file:///D:/devopsfold/devopsexper/mavengradlefor4/myapp/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 4s
+7 actionable tasks: 5 executed, 2 up-to-date
+Configuration cache entry stored.
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>gradle run😊😊😊
+Calculating task graph as configuration cache cannot be reused because file 'build.gradle' has changed.
+
+> Task :run
+2 + 3 = 5
+Application executed successfully!
+
+[Incubating] Problems report is available at: file:///D:/devopsfold/devopsexper/mavengradlefor4/myapp/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 2s
+2 actionable tasks: 1 executed, 1 up-to-date
+Configuration cache entry stored.
+D:\devopsfold\devopsexper\mavengradlefor4\myapp>
+
+
+
+
+pom   😊😊😊😊😊😊😊
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>myapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- JUnit Dependency for Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <redirectTestOutputToFile>false</redirectTestOutputToFile>
+                    <useSystemOut>true</useSystemOut>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+
+
+
+app.java😊😊😊😊😊😊
+
+package com.example;
+
+public class App {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        App app = new App();
+
+        int result = app.add(2, 3);
+        System.out.println("2 + 3 = " + result);
+
+        System.out.println("Application executed successfully!");
+    }
+}
+
+
+
+gradle groovy😊😊😊😊😊😊
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'com.example.App'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test {
+    outputs.upToDateWhen { false }
+
+    testLogging {
+        events "passed", "failed", "skipped"
+        exceptionFormat "full"
+        showStandardStreams = true
+    }
+}
