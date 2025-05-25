@@ -1,3 +1,41 @@
+Search cmd open on adminstrator
+C:\Windows\System32>wsl --list --online 
+C:\Windows\System32>wsl --install --distribution Ubuntu-24.04 
+C:\Windows\System32>wsl
+
+
+sudo apt update
+sudo apt install ansible -y 
+ssh-keygen
+mkdir ansible-localhost 
+cd ansible-localhost
+
+
+
+Using the Terminal 
+1. Open your terminal. 
+2. Navigate to your Ansible project folder (or create one): 
+mkdir -p ansible-localhost 
+cd ansible-localhost
+
+
+nano hosts.ini
+[local] 
+localhost ansible_connection=local
+
+ansible all -i hosts.ini -m ping 
+
+nano ansible.yml
+
+
+cat hosts.ini 
+cat ansible.yml
+
+ansible-playbook -i hosts.ini ansible.yml
+
+
+ansible-playbook -i hosts.ini ansible.yml --ask-become-pass
+
 bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$  sudo apt update😂
 [sudo] password for bindu636171:
 Sorry, try again.
@@ -100,7 +138,7 @@ bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo service ntp stop
 ntp: unrecognized service
 bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo ntpd -gq
 sudo: ntpd: command not found
-bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo apt install ntpdate -y😂
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo apt install ansible -y😂
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
