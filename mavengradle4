@@ -11,6 +11,20 @@ D:\devopsfold\devopsexper>mkdir mavengradlefor4
 
 D:\devopsfold\devopsexper>cd mavengradlefor4
 
+
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=maven-example -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+mvn clean install
+mvn exec:java -Dexec.mainClass="com.example.App"
+gradle init
+gradlew build
+gradlew run
+
+
+
+
 D:\devopsfold\devopsexper\mavengradlefor4>mvn archetype:generate -DgroupId=com.example -DartifactId=myapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false😊😊😊
 [INFO] Scanning for projects...
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
@@ -326,4 +340,23 @@ test {
         exceptionFormat "full"
         showStandardStreams = true
     }
+}
+
+
+
+
+or
+
+
+
+plugins {
+id 'java'
+}group = 'com.example'
+version = '1.0-SNAPSHOT'repositories {
+mavenCentral()
+}dependencies {
+testImplementation 'junit:junit:4.12'
+}task run(type: JavaExec) {
+main = 'com.example.App'
+classpath = sourceSets.main.runtimeClasspath
 }
