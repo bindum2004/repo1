@@ -1,0 +1,277 @@
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$  sudo apt update😂
+[sudo] password for bindu636171:
+Sorry, try again.
+[sudo] password for bindu636171:
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [208 B]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Get:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [161 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [376 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:13 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7060 B]
+Get:14 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [16.3 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:16 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Fetched 1015 kB in 4s (281 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+156 packages can be upgraded. Run 'apt list --upgradable' to see them.
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ sudo apt install ansible -y😂
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ansible is already the newest version (9.2.0+dfsg-0ubuntu5).
+0 upgraded, 0 newly installed, 0 to remove and 156 not upgraded.
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ ssh-keygen😂
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/bindu636171/.ssh/id_ed25519): ansibleproject
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Saving key "ansibleproject" failed: Permission denied
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/bindu636171/.ssh/id_ed25519): ansible-project1
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Saving key "ansible-project1" failed: Permission denied
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/bindu636171/.ssh/id_ed25519):
+/home/bindu636171/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y😂
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/bindu636171/.ssh/id_ed25519
+Your public key has been saved in /home/bindu636171/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:kUCyyjuCNU4DjrDdU3LZCsF9XjnZIXp8C7ngZX5x7sE bindu636171@LAPTOP-UBL9PMUH
+The key's randomart image is:
++--[ED25519 256]--+
+|   .ooo   .+..   |
+|    .+.+.+=o.    |
+|o   + +o*.B.o .  |
+|+= o = o.B + *   |
+|o.O o . S o o E  |
+|.+ + .     . . . |
+|o +           .  |
+| . .             |
+|                 |
++----[SHA256]-----+
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ cd ~😂
+bindu636171@LAPTOP-UBL9PMUH:~$ pwd😂
+/home/bindu636171
+bindu636171@LAPTOP-UBL9PMUH:~$ mkdir ansible-localhost😂
+bindu636171@LAPTOP-UBL9PMUH:~$ cd ansible-localhost😂
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ nano hosts.ini😂
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ ansible all -i hosts.ini -m ping😂
+localhost | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ nano ansible.yml😂
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ ansible-playbook -i hosts.ini ansible.yml --ask-become-pass😂
+BECOME password:
+
+PLAY [Install and run nginx on localhost] ******************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************
+ok: [localhost]
+
+TASK [Install nginx] ***************************************************************************************************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: E:Release file for http://archive.ubuntu.com/ubuntu/dists/noble-updates/InRelease is not valid yet (invalid for another 1h 0min 3s). Updates for this repository will not be applied."}
+
+PLAY RECAP *************************************************************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo hwclock -s
+sudo: hwclock: command not found
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo service ntp stop
+ntp: unrecognized service
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo ntpd -gq
+sudo: ntpd: command not found
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo apt install ntpdate -y😂
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  ntpsec-ntpdate ntpsec-ntpdig python3-ntp
+The following NEW packages will be installed:
+  ntpdate ntpsec-ntpdate ntpsec-ntpdig python3-ntp
+0 upgraded, 4 newly installed, 0 to remove and 156 not upgraded.
+Need to get 156 kB of archives.
+After this operation, 607 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-ntp amd64 1.2.2+dfsg1-4build2 [91.2 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 ntpsec-ntpdig amd64 1.2.2+dfsg1-4build2 [25.2 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 ntpsec-ntpdate amd64 1.2.2+dfsg1-4build2 [22.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 ntpdate all 1:4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2 [17.5 kB]
+Fetched 156 kB in 2s (65.7 kB/s)
+Selecting previously unselected package python3-ntp.
+(Reading database ... 66089 files and directories currently installed.)
+Preparing to unpack .../python3-ntp_1.2.2+dfsg1-4build2_amd64.deb ...
+Unpacking python3-ntp (1.2.2+dfsg1-4build2) ...
+Selecting previously unselected package ntpsec-ntpdig.
+Preparing to unpack .../ntpsec-ntpdig_1.2.2+dfsg1-4build2_amd64.deb ...
+Unpacking ntpsec-ntpdig (1.2.2+dfsg1-4build2) ...
+Selecting previously unselected package ntpsec-ntpdate.
+Preparing to unpack .../ntpsec-ntpdate_1.2.2+dfsg1-4build2_amd64.deb ...
+Unpacking ntpsec-ntpdate (1.2.2+dfsg1-4build2) ...
+Selecting previously unselected package ntpdate.
+Preparing to unpack .../ntpdate_1%3a4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2_all.deb ...
+Unpacking ntpdate (1:4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2) ...
+Setting up python3-ntp (1.2.2+dfsg1-4build2) ...
+Setting up ntpsec-ntpdig (1.2.2+dfsg1-4build2) ...
+Setting up ntpsec-ntpdate (1.2.2+dfsg1-4build2) ...
+Setting up ntpdate (1:4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo ntpdate pool.ntp.org
+2025-05-25 05:50:18.351124 (+0000) +5672.023977 +/- 0.168025 pool.ntp.org 95.216.144.226 s2 no-leap
+CLOCK: time stepped by 5672.023977
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo apt update😂
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Fetched 126 kB in 3s (47.7 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+156 packages can be upgraded. Run 'apt list --upgradable' to see them.
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ ansible-playbook -i hosts.ini ansible.yml --ask-become-pass😂
+BECOME password:
+
+PLAY [Install and run nginx on localhost] ******************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************
+ok: [localhost]
+
+TASK [Install nginx] ***************************************************************************************************************************************
+ok: [localhost]
+
+TASK [Stop any existing nginx (cleanup)] *******************************************************************************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "cmd": ["sudo", "pkill", "-9", "nginx", "||", "true"], "delta": "0:00:00.019382", "end": "2025-05-25 05:51:10.169493", "msg": "non-zero return code", "rc": 2, "start": "2025-05-25 05:51:10.150111", "stderr": "pkill: only one pattern can be provided\nTry `pkill --help' for more information.", "stderr_lines": ["pkill: only one pattern can be provided", "Try `pkill --help' for more information."], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [Start nginx (WSL compatible)] ************************************************************************************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "cmd": ["sudo", "nginx"], "delta": "0:00:02.525269", "end": "2025-05-25 05:51:12.871565", "msg": "non-zero return code", "rc": 1, "start": "2025-05-25 05:51:10.346296", "stderr": "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\nnginx: [emerg] still could not bind()", "stderr_lines": ["nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)", "nginx: [emerg] still could not bind()"], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP *************************************************************************************************************************************************
+localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo pkill -9 nginx😂
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ sudo netstat -tulnp | grep :80
+sudo: netstat: command not found
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ nano ansible.yml😂
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ ansible-playbook -i hosts.ini ansible.yml --ask-become-pass
+BECOME password:
+
+PLAY [Install and run nginx on localhost] ******************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************
+ok: [localhost]
+
+TASK [Install nginx] ***************************************************************************************************************************************
+ok: [localhost]
+
+TASK [Force stop all nginx processes (WSL compatible)] *****************************************************************************************************
+ok: [localhost]
+
+TASK [Start nginx (with port conflict handling)] ***********************************************************************************************************
+ASYNC OK on localhost: jid=j963175797858.4008
+ok: [localhost]
+
+PLAY RECAP *************************************************************************************************************************************************
+localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ curl -I http://localhost😂
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 25 May 2025 05:58:10 GMT
+Content-Type: text/html
+Content-Length: 121
+Last-Modified: Sun, 25 May 2025 01:53:24 GMT
+Connection: keep-alive
+ETag: "68327814-79"
+Accept-Ranges: bytes
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$ curl -I http://localhost
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 25 May 2025 05:58:27 GMT
+Content-Type: text/html
+Content-Length: 121
+Last-Modified: Sun, 25 May 2025 01:53:24 GMT
+Connection: keep-alive
+ETag: "68327814-79"
+Accept-Ranges: bytes
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-localhost$
+
+😂😂😂😂
+
+
+- name: Install and run nginx on localhost
+  hosts: local
+  become: yes
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Force stop all nginx processes (WSL compatible)
+      shell: |
+        sudo pkill -9 nginx || true
+        sleep 2  # Wait for process termination
+      changed_when: false
+      ignore_errors: yes
+
+    - name: Start nginx (with port conflict handling)
+      shell: |
+        sudo nginx -s stop || true  # Try graceful stop first
+        sudo nginx
+      changed_when: false
+      async: 10
+      poll: 2
+
+
+or
+
+
+- name: Install and run nginx on localhost
+  hosts: local
+  become: yes
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Stop any existing nginx (cleanup)
+      command: sudo pkill -9 nginx || true
+      changed_when: false
+      ignore_errors: yes
+
+    - name: Start nginx (WSL compatible)
+      command: sudo nginx
+      changed_when: false
+
+    - name: Verify nginx is running
+      command: curl -s http://localhost
+      register: nginx_status
+      changed_when: false
+😂😂
+[local]
+localhost ansible_connection=local
