@@ -34,6 +34,8 @@ Add build step -> Add windows batch command
 
 java -cp target/myapp-1.0-SNAPSHOT.jar com.example.App
 
+java -cp target/myapp-1.0-SNAPSHOT.jar com.example.App
+
 
 
  sudo apt update
@@ -129,6 +131,109 @@ pom.xml for maven
     </plugins>
   </build>
 </project>
+
+
+
+
+
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$  sudo apt update
+[sudo] password for bindu636171:
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ sudo apt install ansible -y
+
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ mkdir ansible-deploy
+mkdir: cannot create directory ‘ansible-deploy’: Permission denied
+
+bindu636171@LAPTOP-UBL9PMUH:/mnt/c/windows/system32$ cd ~
+bindu636171@LAPTOP-UBL9PMUH:~$ mkdir ansible-deploy
+mkdir: cannot create directory ‘ansible-deploy’: File exists
+
+bindu636171@LAPTOP-UBL9PMUH:~$ mkdir ansible-deploy1
+
+bindu636171@LAPTOP-UBL9PMUH:~$ cd ansible-deploy1
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$  sudo apt install default-jdk -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+default-jdk is already the newest version (2:1.21-75+exp1).
+0 upgraded, 0 newly installed, 0 to remove and 156 not upgraded.
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ java --version
+openjdk 21.0.7 2025-04-15
+
+OpenJDK Runtime Environment (build 21.0.7+6-Ubuntu-0ubuntu124.04)
+OpenJDK 64-Bit Server VM (build 21.0.7+6-Ubuntu-0ubuntu124.04, mixed mode, sharing)
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ nano inventory.ini
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ nano inventory.ini
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ nano deploy.yml
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ nano deploy.yml
+
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ ansible-playbook -i inventory.ini deploy.yml --ask-become-pass
+BECOME password:
+
+PLAY [localhost] *******************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************
+ok: [localhost]
+
+TASK [Copy JAR from Jenkins workspace] *********************************************************************************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Could not find or access '/mnt/c/ProgramData/Jenkins/.jenkins/workspace/JENKINSPROJECT/target/myapp-1.0-SNAPSHOT.jar' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP *************************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ nano deploy.yml
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ ansible-playbook -i inventory.ini deploy.yml --ask-become-pass
+BECOME password:
+
+PLAY [Deploy JAR from Jenkins] *****************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************
+ok: [localhost]
+
+TASK [Copy JAR from Jenkins workspace] *********************************************************************************
+changed: [localhost]
+
+TASK [Run Java App in Background] **************************************************************************************
+changed: [localhost]
+
+PLAY RECAP *************************************************************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ cat app.log
+2 + 3 = 5
+Application executed successfully!
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ nano deploy.yml
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ ansible-playbook -i inventory.ini deploy.yml --ask-become-pass
+BECOME password:
+
+PLAY [Deploy JAR from Jenkins] *****************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************
+ok: [localhost]
+
+TASK [Copy JAR from Jenkins workspace] *********************************************************************************
+ok: [localhost]
+
+TASK [Run Java App in Background] **************************************************************************************
+changed: [localhost]
+
+PLAY RECAP *************************************************************************************************************
+localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$ cat app.log
+2 + 3 = 5
+Application executed successfully!
+bindu636171@LAPTOP-UBL9PMUH:~/ansible-deploy1$
+
+
+
+
 
 
 
