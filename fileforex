@@ -1,18 +1,78 @@
-package com.example;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+bindu@LAPTOP-UBL9PMUH MINGW64 ~ (master)
+$ d:
+bash: d:: command not found
 
-public class AdditionOperationTest {
+bindu@LAPTOP-UBL9PMUH MINGW64 ~ (master)
+$ cd d:
 
-    @Test
-    public void testAddition() {
-        double num1 = 5;
-        double num2 = 10;
-        double expectedSum = num1 + num2;
+bindu@LAPTOP-UBL9PMUH MINGW64 /d
+$ cd devopsfold
 
-        double actualSum = num1 + num2;
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold😊
+$ cd devopsexper
 
-        assertEquals(expectedSum, actualSum, 0.01);
-    }
-}
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper
+$ cd myapp
+bash: cd: myapp: No such file or directory
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper
+$ cd 8maven
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven
+$ cd myapp😊
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp
+$ git init😊
+Initialized empty Git repository in D:/devopsfold/devopsexper/8maven/myapp/.git/
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp (master)
+$ git add .😊
+warning: in the working copy of 'target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst', LF will be replaced by CRLF the next time Git touches it
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp (master)
+$ git commit -m "maven8"😊
+[master (root-commit) cdf5d2e] maven8
+ 17 files changed, 200 insertions(+)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/compiler.xml
+ create mode 100644 .idea/jarRepositories.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/com/example/App.java
+ create mode 100644 src/test/java/com/example/AppTest.java
+ create mode 100644 target/classes/com/example/App.class
+ create mode 100644 target/maven-archiver/pom.properties
+ create mode 100644 target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+ create mode 100644 target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+ create mode 100644 target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+ create mode 100644 target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+ create mode 100644 target/myapp-1.0-SNAPSHOT.jar
+ create mode 100644 target/surefire-reports/TEST-com.example.AppTest.xml
+ create mode 100644 target/surefire-reports/com.example.AppTest.txt
+ create mode 100644 target/test-classes/com/example/AppTest.class
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp (master)
+$ git branch -M main😊
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp (main)
+$ git remote add origin https://github.com/bindum2004/8mavenp.git😊
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp (main)
+$ git push -u origin main😊
+Enumerating objects: 44, done.
+Counting objects: 100% (44/44), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (44/44), 8.34 KiB | 406.00 KiB/s, done.
+Total 44 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/bindum2004/8mavenp.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp (main)
+$ ^C
+
+bindu@LAPTOP-UBL9PMUH MINGW64 /d/devopsfold/devopsexper/8maven/myapp (main)
+$
