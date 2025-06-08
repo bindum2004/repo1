@@ -10,7 +10,9 @@ got to maven project dirctory
 
  git init 
  git add . 
- git branch -M main 
+ git branch -M main
+git commit -m "Your commit message here"
+
 $ git remote add origin https://github.com/itishreebarik890/SAMPLEJENKINSPROJECT.git 
 $ git push -u origin main
 
