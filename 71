@@ -1,0 +1,23 @@
+- name: Install htop on localhost
+  hosts: local
+  become: true
+  tasks:
+    - name: Install htop
+      ansible.builtin.package:
+        name: htop
+        state: present
+
+
+
+
+
+
+sudo apt update
+sudo apt install ansible -y
+ssh-keygen
+mkdir ansible7
+cd ansible7
+nano hosts.ini
+ansible -i hosts.ini all -m ping
+ nano ansible.yml
+ansible-playbook -i hosts.ini ansible.yml
