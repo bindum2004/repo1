@@ -275,3 +275,37 @@ or
 😂😂
 [local]
 localhost ansible_connection=local
+
+
+
+
+
+
+
+
+
+
+
+wsl
+sudo apt update
+sudo apt install ansible -y
+ssh-keygen
+ mkdir ansible-localhost
+cd ansible-localhost
+nano hosts.ini
+
+[local]
+localhost ansible_connection=local
+
+ansible all -i hosts.ini -m ping
+
+
+
+
+
+
+
+
+
+
+
