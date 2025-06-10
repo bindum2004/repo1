@@ -1,0 +1,19 @@
+---
+- name: Deploy JAR from Jenkins
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Copy JAR from Jenkins workspace
+      copy:
+        src: /mnt/c/ProgramData/Jenkins/.jenkins/workspace/8thproject/target/myapp-1.0-SNAPSHOT.jar
+        dest: /mnt/d/external/mavenfor8th/myapp/myapp-1.0-SNAPSHOT.jar
+        mode: '0755'
+
+    - name: Run Java App in Background
+      shell: nohup java -jar /mnt/d/external/mavenfor8th/myapp/myapp-1.0-SNAPSHOT.jar > app.log 2>&1 &
+
+
+
+
+
+
