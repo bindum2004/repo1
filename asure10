@@ -19,3 +19,22 @@ account You be able to see starter pipeline select for Maven
 
 Finally You be able to see tasks running its failed because we should 
 mention proper path For pom.xm
+
+
+
+
+
+trigger:
+- main  # Change this if your branch is not 'main'
+
+pool:
+  name: Default  # This uses your self-hosted agent
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'clean install'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+  displayName: 'Maven Build and Test'
