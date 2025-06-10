@@ -38,3 +38,20 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
   displayName: 'Maven Build and Test'
+
+
+
+
+
+cd /d D:\azure-agent
+config.cmd
+Now you’ll get prompts. Fill in as follows:
+
+Prompt	What You Type
+Enter server URL	https://dev.azure.com/YOUR_ORG_NAME → Replace with your Azure DevOps org URL (e.g., https://dev.azure.com/bindu-org)
+Enter authentication type	PAT
+Enter personal access token	Paste the PAT you generated from Azure DevOps =======
+Enter agent name	Press Enter (or type a name like my-agent)
+Enter work folder	Press Enter to accept default (_work)
+Do you want to run the agent as a service?	Type Y
+Enter user account	Press Enter (defaults to your current Windows login user)
