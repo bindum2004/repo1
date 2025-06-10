@@ -69,3 +69,18 @@
 
 
 
+sudo apt update
+sudo apt install ansible -y
+cd ~
+ mkdir ansible-deploy1 
+cd ansible-deploy1
+sudo apt install default-jdk -y
+java --version
+
+ nano inventory.ini
+
+[local]
+localhost ansible_connection=local
+
+
+
