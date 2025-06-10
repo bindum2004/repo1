@@ -82,5 +82,12 @@ java --version
 [local]
 localhost ansible_connection=local
 
+nano deploy.yml
 
+ ansible-playbook -i inventory.ini deploy.yml --ask-become-pass  😊
+
+
+
+
+cat app.log  
 
