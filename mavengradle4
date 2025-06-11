@@ -1,3 +1,12 @@
+task run(type: JavaExec) {
+main = 'com.example.App'
+classpath = sourceSets.main.runtimeClasspath
+}
+
+
+
+
+
 Microsoft Windows [Version 10.0.22631.5335]
 (c) Microsoft Corporation. All rights reserved.
 
@@ -356,7 +365,9 @@ version = '1.0-SNAPSHOT'repositories {
 mavenCentral()
 }dependencies {
 testImplementation 'junit:junit:4.12'
-}task run(type: JavaExec) {
+}
+
+task run(type: JavaExec) {
 main = 'com.example.App'
 classpath = sourceSets.main.runtimeClasspath
 }
