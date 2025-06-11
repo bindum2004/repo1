@@ -55,3 +55,34 @@ Enter agent name	Press Enter (or type a name like my-agent)
 Enter work folder	Press Enter to accept default (_work)
 Do you want to run the agent as a service?	Type Y
 Enter user account	Press Enter (defaults to your current Windows login user)
+
+
+
+
+
+
+create org
+create new project public
+
+
+profile
+pat
+new token 
+scopes red nad manage nad read execute {build agent pools}
+create na dcopy that
+
+
+azure devops org  org setting agent pools default new agent download file new flilder extract all copy path change 
+
+
+cmd
+
+pipeline
+create 
+new git maven 
+code paste
+
+
+
+
+
